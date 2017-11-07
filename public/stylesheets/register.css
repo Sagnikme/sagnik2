@@ -1,0 +1,7 @@
+.container {
+  margin: 0 auto;
+  padding: 80px 0;
+  height: 100px;
+  max-width: 70px;
+  text-align: center;
+}

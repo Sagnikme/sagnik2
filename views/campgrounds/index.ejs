@@ -1,0 +1,57 @@
+<% include ../partials/header %> 
+<link rel="stylesheet" href="/stylesheets/index.css" type="text/css">
+
+	<div class="container1">
+		<div class="left">
+			<div class="info-box">
+					<!--<div class="container2">-->
+						
+					<!--	     <img src = <%= currentUser.profile_image %> class="thumbnail" alt="Rounded Image">-->
+					<!--	    </div>-->
+					<!--	</div>	-->
+					<div class="entry">
+					<i class="icon-wallet" aria-hidden="true"></i>
+					<p>Amount:<br><span><%= currentUser.bank_balance %></span></p>
+				</div>
+				<div class="entry">
+					<i class="icon-calendar" aria-hidden="true"></i>
+					<p>Date:<br><span>Nov 5</span></p>
+				</div>
+				<div class="entry">
+					<i class="icon-star" aria-hidden="true"></i>
+					<p>Issuer:<br><span>KnottPay</span></p>
+				</div>
+				<div class="entry">
+					<i class="icon-notebook" aria-hidden="true"></i>
+					<p>Account Number:<br><span><%= currentUser._id %></span></p>
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="content">
+				<div class="header">
+					<img src="<%= currentUser.profile_image %>">
+					<h4>Oct 18, 2015   08:30:57   PDT</h4>
+				</div>
+				<div class="main">
+					<h3><%= currentUser.username %></h3>
+					<h5>Total: <%= currentUser.bank_balance %></h5>
+				</div>
+				<div class="message">
+					<p>Hello <%= currentUser.username %>,<br>Your balance is <%= currentUser.bank_balance %></p>
+					<p>
+						
+					</p>
+					<p>
+						
+					</p>
+					<h6>It may take a few moments for this<br>transaction to appear in your account.</h6>
+				</div>
+				<div class="footer">
+					<a class="btn btn-primary" href="/campgrounds/new">Add Money</a>
+					<h6>Invoice ID: 108165</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+<% include ../partials/footer %>
