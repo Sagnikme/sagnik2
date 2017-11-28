@@ -7,8 +7,9 @@ var UserSchema = new mongoose.Schema({
     last_name: String,
     email: String,
     phone: String,
-    bank_balance: String,
+    credit: {type: Number, default: 0 },
     password: String,
+    
     
 });
 

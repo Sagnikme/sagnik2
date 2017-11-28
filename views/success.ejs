@@ -1,8 +1,7 @@
 <% include ./partials/header %> 
 <link rel="stylesheet" href="../stylesheets/register.css" type="text/css">
 		
-
-<form action="/register" method="post" enctype="multipart/form-data">
+<form action="/index/<%= userMe._id%>/edit?_method=PUT" method="post" enctype="multipart/form-data">
    
 					
 						
@@ -41,9 +40,9 @@
                 </div>
                     	
 </form>
+
+
+
+<a class="btn btn-lg btn-primary btn-block" href="/campgrounds">Proceed</a>
 <% include ./partials/footer %> 
-
-
-
-
-
+ 

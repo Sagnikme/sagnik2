@@ -1,5 +1,11 @@
 <% include ../partials/header %> 
 <link rel="stylesheet" href="/stylesheets/index.css" type="text/css">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
 	<div class="container1">
 		<div class="left">
@@ -11,11 +17,11 @@
 					<!--	</div>	-->
 					<div class="entry">
 					<i class="icon-wallet" aria-hidden="true"></i>
-					<p>Amount:<br><span><%= currentUser.bank_balance %></span></p>
+					<p>Amount: <br><span><%= currentUser.credit%> </span></p>
 				</div>
 				<div class="entry">
 					<i class="icon-calendar" aria-hidden="true"></i>
-					<p>Date:<br><span>Nov 5</span></p>
+					<p>Date:<br><span><%= new Date();%></span></p>
 				</div>
 				<div class="entry">
 					<i class="icon-star" aria-hidden="true"></i>
@@ -30,15 +36,17 @@
 		<div class="right">
 			<div class="content">
 				<div class="header">
-					<img src="<%= currentUser.profile_image %>">
-					<h4>Oct 18, 2015   08:30:57   PDT</h4>
+				
+					<h4> <%= new Date();%></h4>
 				</div>
 				<div class="main">
 					<h3><%= currentUser.username %></h3>
 					<h5>Total: <%= currentUser.bank_balance %></h5>
+					<img id="myImg" src= "<%=currentUser.profile_image%>"  type="text"  width="100" height="120"> 
+
 				</div>
 				<div class="message">
-					<p>Hello <%= currentUser.username %>,<br>Your balance is <%= currentUser.bank_balance %></p>
+					<p>Hello <%= currentUser.username %>,<br>Your balance is <%= currentUser.credit %></p>
 					<p>
 						
 					</p>
@@ -48,8 +56,13 @@
 					<h6>It may take a few moments for this<br>transaction to appear in your account.</h6>
 				</div>
 				<div class="footer">
-					<a class="btn btn-primary" href="/campgrounds/new">Add Money</a>
-					<h6>Invoice ID: 108165</h6>
+					<form action ="/pay" method ="post">
+					
+						 <input type="submit" value="Add Money">
+					</form>
+					
+					
+					<h6>Invoice ID: <%= currentUser._id %> </h6>
 				</div>
 			</div>
 		</div>

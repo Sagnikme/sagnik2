@@ -2,6 +2,7 @@ var express = require("express");
 var router  = express.Router();
 var Campground = require("../models/campground");
 var middleware = require("../middleware");
+var moment   = require("moment");
 
 
 //INDEX - show all campgrounds
@@ -12,6 +13,8 @@ router.get("/",middleware.isLoggedIn, function(req, res){
            console.log(err);
        } else {
           res.render("campgrounds/index",{campgrounds:allCampgrounds});
+          moment: moment;
+          
        }
     });
 });
@@ -66,7 +69,6 @@ router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
         res.render("campgrounds/edit", {campground: foundCampground});
     });
 });
-
 // UPDATE CAMPGROUND ROUTE
 router.put("/:id",middleware.checkCampgroundOwnership, function(req, res){
     // find and update the correct campground
@@ -77,6 +79,8 @@ router.put("/:id",middleware.checkCampgroundOwnership, function(req, res){
            //redirect somewhere(show page)
            res.redirect("/campgrounds/" + req.params.id);
        }
+
+
     });
 });
 
