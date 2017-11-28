@@ -42,8 +42,8 @@ paypal.configure({
   "client_secret": "EHt90a_H5mXyQ2kDX_qBjYJh7IxSfcrtft0G50FAMYVIuROn92Titz1T6YhQl-wQTI4P36QXBCPyORaK"
 });
     
-    
-mongoose.connect("mongodb://knot:12345@@ds123556.mlab.com:23556/knottpay");
+//mongoose.connect("mongodb://localhost/yelp_camp_v10");    
+mongoose.connect("mongodb://knot:12345@ds123556.mlab.com:23556/knottpay");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
