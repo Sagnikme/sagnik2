@@ -33,8 +33,8 @@ exports.index = function(req, res) {
 //timing details
 
 
-var url = 'http://knottpay-iknott.c9users.io/';
-    
+//var url = 'http://knottpay-iknott.c9users.io/';
+ var url ='https://knottpay.herokuapp.com/';   
 //paypal details
 paypal.configure({
   "mode": "sandbox", //sandbox or live
