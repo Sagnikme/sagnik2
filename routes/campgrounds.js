@@ -2,7 +2,6 @@ var express = require("express");
 var router  = express.Router();
 var Campground = require("../models/campground");
 var middleware = require("../middleware");
-var moment   = require("moment");
 
 
 //INDEX - show all campgrounds
@@ -13,7 +12,7 @@ router.get("/",middleware.isLoggedIn, function(req, res){
            console.log(err);
        } else {
           res.render("campgrounds/index",{campgrounds:allCampgrounds});
-          moment: moment;
+          
           
        }
     });
