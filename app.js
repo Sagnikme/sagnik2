@@ -24,16 +24,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var moment = require('moment');
-exports.index = function(req, res) {
-    res.render('index', { moment: moment });
-};
+
         // var middleware = require("/middleware"); 
         
 //timing details
 
 //var url = 'https://ancient-basin-11192.herokuapp.com/';
-var url = 'http://knottpay-iknott.c9users.io/';
+var url = '159.89.162.224';
 //  var url ='https://knottpay.herokuapp.com/';   
 //paypal details
 paypal.configure({
