@@ -25,7 +25,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 //var url = 'http://knottpay-iknott.c9users.io/';
-var url = "http://localhost:9229" ;       
+var url = "http://159.89.162.224:3000" ;       
 //paypal details
 paypal.configure({
   "mode": "sandbox", //sandbox or live
