@@ -24,14 +24,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-
-        // var middleware = require("/middleware"); 
-        
-//timing details
-
-//var url = 'https://ancient-basin-11192.herokuapp.com/';
-var url = '159.89.162.224';
-//  var url ='https://knottpay.herokuapp.com/';   
+//var url = 'http://knottpay-iknott.c9users.io/';
+var url = "http://localhost:9229" ;       
 //paypal details
 paypal.configure({
   "mode": "sandbox", //sandbox or live
@@ -40,7 +34,7 @@ paypal.configure({
 });
     
 //mongoose.connect("mongodb://localhost/yelp_camp_v10");    
-mongoose.connect("mongodb://knot:12345@ds123556.mlab.com:23556/knottpay");
+mongoose.connect("mongodb://Sagnik:12345@ds239217.mlab.com:39217/knottpay");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -146,5 +140,5 @@ app.get('/success', (req, res) => {
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){
-   console.log("The Knottpay Started!");
+   console.log("PORT");
 });
