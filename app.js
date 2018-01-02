@@ -32,9 +32,9 @@ exports.index = function(req, res) {
         
 //timing details
 
-
+var url = 'https://ancient-basin-11192.herokuapp.com/';
 //var url = 'http://knottpay-iknott.c9users.io/';
- var url ='https://knottpay.herokuapp.com/';   
+//  var url ='https://knottpay.herokuapp.com/';   
 //paypal details
 paypal.configure({
   "mode": "sandbox", //sandbox or live

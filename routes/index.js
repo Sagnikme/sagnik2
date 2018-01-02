@@ -37,11 +37,8 @@ router.get("/register", function(req, res){
 });
 
 //handle sign up logic
-router.post("/register", upload.single('image'),function(req, res){
-    
+    router.post("/register", upload.single('image'),function(req, res){
     var newUser = new User({
-//         req.body.campground.image =result.secure_url ;
-//   // add cloudinary url for the image to the campground object under image property   
 //   
         profile_image: req.body.profile_image,
         username: req.body.username,
@@ -51,30 +48,9 @@ router.post("/register", upload.single('image'),function(req, res){
         bank_balance: req.body.bank_balance,
         
     
-//     //cloudinary.uploader.upload(req.file.path, function(result) {
-//   // add cloudinary url for the image to the campground object under image property
-//   req.body.campground.image = result.secure_url;
-//   // add author to campground
-//   req.body.campground.author = {
-//     id: req.user._id,
-//     username: req.user.username
-  //}
-    
-    //   newUser = {username: username, bank_balance:bank_balance,profile_image: profile_image};
-       
-    // // Create a new campground and save to DB
-    
+
     
     }); 
-    //  newUser.create(newUser, function(err, newlyCreated){
-    //     if(err){
-    //         console.log(err);
-    //     } else {
-    //         //redirect back to campgrounds page
-    //         console.log(newlyCreated);
-    //         // res.redirect("/campgrounds");
-    //     }
-    // });
     
     
     User.register(newUser, req.body.password, function(err, user){
@@ -99,13 +75,14 @@ router.get("/login", function(req, res){
 router.get("/:id/edit", function(req, res) {
     User.findById(req.params.id, function(err, foundUser) {
         if(err){
-            res.redirect("/campgrounds")
+            res.send("wrong");
         }else{
-            res.render("success", {User: foundUser});
+            res.render("yo",{users: foundUser});
+           
         }
     });
-    
 });
+    
 
 //handling login logic
 router.post("/login", passport.authenticate("local", 

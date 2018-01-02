@@ -1,0 +1,58 @@
+ <% include ./partials/header %> 
+<link rel="stylesheet" href="../stylesheets/register.css" type="text/css">
+		
+
+<form action="/index/<%=users.id%>/edit?method=PUT" method="post" enctype="multipart/form-data">
+   
+					
+						
+			   <div style="width: 30%; margin: 25px auto">
+            
+                <div class="form-group">
+                    <input class="form-control" type="text" name="profile_image" placeholder="use postimg.org to convert image to url and then paste here" required>
+                    
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="username" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="last_name" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="email" placeholder="email">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" name="phone" placeholder="Phone Number">
+                </div>
+                <div class="group2">
+                    <input type="hidden" name="bank_balance" value ="10">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+                <div class="form-group" style="text-align: center">
+                	<h6>Already have an account???</h6>
+                </div>
+                <div class="form-group">
+                    <a class="btn btn-lg btn-primary btn-block" href="/login">Login</a>
+                </div>
+                    	
+</form>
+
+
+<a class="btn btn-lg btn-primary btn-block" href="/campgrounds">Proceed</a>
+<% include ./partials/footer %> 
+
+
+
+
+
+
+
+
+
+
+
